@@ -92,16 +92,10 @@ class GameFragment : Fragment() {
             startRoundTime = System.currentTimeMillis()
             roundDeadlineHandler.sendEmptyMessageDelayed(MSG_ROUND_DEADLINE, settings.roundInterval)
         } else {
-            with(fragmentGameBinding) {
-                roundTv.text = getString(R.string.points)
-                val points = hits * 10f / (totalGameTime / 1000L)
-                "%.1f".format(points).also {
-                    questionTv.text = it
-                }
-                alternativeOneBt.visibility = View.GONE
-                alternativeTwoBt.visibility = View.GONE
-                alternativeThreeBt.visibility = View.GONE
-            }
+            val points = hits * 10f / (totalGameTime / 1000L)
+            activity?.supportFragmentManager?.beginTransaction()
+                ?.replace(R.id.gameFl, ResultFragment.newInstance(points, settings))
+                ?.commit()
         }
     }
 }

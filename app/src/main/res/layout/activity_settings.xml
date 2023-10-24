@@ -21,8 +21,9 @@
         android:autofillHints="name"
         android:hint="@string/player_name"
         android:inputType="textPersonName"
-        app:layout_constraintStart_toStartOf="parent"
+        android:minHeight="48dp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/gameTbIn" />
 
     <TextView
@@ -38,9 +39,10 @@
         android:id="@+id/roundsSp"
         style="@style/SettingsView"
         android:entries="@array/rounds"
-        app:layout_constraintStart_toStartOf="parent"
+        android:minHeight="48dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/roundsTv"/>
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/roundsTv" />
 
     <TextView
         android:id="@+id/roundIntervalTv"
